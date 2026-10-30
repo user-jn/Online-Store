@@ -154,6 +154,7 @@ public class Store {
 
         } catch (IOException e) {
             System.out.println("Error reading products: " + e.getMessage());
+
         }
     }
 }
