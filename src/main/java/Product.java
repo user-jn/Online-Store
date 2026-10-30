@@ -33,5 +33,9 @@ public class Product {
         public String getDepartment() {
             return department;
         }
-
+        @Override
+        public String toString() {
+            // formating  %-8s=left align SKU in 8 spaces, %-32s=left-align product name in 32 spaces, %8.2f=price,8spaces wide+2decimals, %s=department name
+            return String.format(Locale.US, "%-8s %-32s $%8.2f  %s",sku, name, price, department);
+        }
 }
