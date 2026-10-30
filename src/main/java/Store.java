@@ -88,23 +88,31 @@ public class Store {
                         System.out.println("No products found.");
                     }
                 }
-                // SEARCH PRODUCTS BY PRICE
-                public static void searchByPrice (ArrayList < Product > products, Scanner scnr){
 
-                    System.out.print("Enter a product name: ");
-                    String search = scnr.nextLine().trim().toLowerCase();
+                // SEARCH BY PRICE
+                    public static void searchByPrice(ArrayList<Product> products, Scanner scnr) {
+                    System.out.print("Enter a maximum price: ");
+                    try {
+                        double maxPrice = Double.parseDouble(scnr.nextLine());
 
-                    boolean found = false;
-
-                    for (Product product : products) {
-                        if (product.getName().toLowerCase().contains(search)) {
-                            System.out.println(product);
-                            found = true;
+                        //reject invalid pricing
+                        if (!Double.isFinite(maxPrice) || maxPrice < 0) {
+                            System.out.println("Invalid price.");
+                            return;
                         }
-                    }
-                    // make a case for if not found
-                    if (!=found) {
-                        System.out.println("No products found.");
+                        boolean found = false;
+
+                        for (Product product : products) {
+                            if (product.getPrice() <= maxPrice) {
+                                System.out.println(product);
+                                found = true;
+                            }
+                        }
+                        if (!found) {
+                            System.out.println("No products found.");
+                        }
+                        }
+
                     }
                 }
 
