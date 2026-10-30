@@ -15,6 +15,23 @@ public class Product {
         this.price = price;
         this.department = department;
     }
+        // getters
 
+        // get product SKU
+        public String getSku() {
+            return sku;
+        }
+        // get product name
+        public String getName() {
+            return name;
+        }
+        // get product price
+        public double getPrice() {
+            return price;
+        }
+        // get product department
+        public String getDepartment() {
+            return department;
+        }
 
 }
